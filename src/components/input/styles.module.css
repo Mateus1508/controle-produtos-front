@@ -1,0 +1,21 @@
+.fieldset {
+    border: 1px solid #47967f;
+    padding: 5px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.input {
+    border: none;
+    margin-inline: 5px;
+    width: 100%;
+    font-size: medium;
+}
+
+.legend {
+    padding: 0 5px;
+}
+
+.input:focus {
+    outline: none;
+}
