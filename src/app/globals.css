@@ -38,6 +38,11 @@
     cursor: pointer;
 }
 
+.btn-primary.loading {
+    background-color: #47967f;
+    cursor: not-allowed;
+}
+
 .btn-primary:hover {
     background-color: #47967f;
     color: #ffffff;
@@ -83,10 +88,11 @@ a {
 }
 
 /* @media (prefers-color-scheme: dark) {
-  html, body {
-    color-scheme: dark;
-    color: #ffffff;
-    background-color: #081c15;
-    border-color: #b7e4c7;
-  }
+    html,
+    body {
+        color-scheme: dark;
+        color: #ffffff;
+        background-color: #081c15;
+        border-color: #b7e4c7;
+    }
 } */

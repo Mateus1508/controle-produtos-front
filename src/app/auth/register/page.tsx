@@ -1,6 +1,6 @@
 import styles from './styles.module.css';
 import Link from 'next/link';
-import InputField from '@/components/input';
+import InputField from '@/components/Input';
 
 const Register = () => {
     return (
@@ -14,7 +14,7 @@ const Register = () => {
                 <InputField text="Senha" type="password" />
                 <InputField text="Confirmar senha" type="password" />
                 <button className="btn-primary">Criar</button>
-                <Link href="/auth/register" className="btn-secondary">
+                <Link href="/auth/login" className="btn-secondary">
                     Já possuo uma conta
                 </Link>
             </form>

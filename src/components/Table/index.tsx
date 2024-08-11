@@ -2,14 +2,14 @@ import { Container, Paper } from '@mui/material';
 import { DataGrid, GridColDef, GridRowsProp } from '@mui/x-data-grid';
 
 interface Props {
-    rows?: GridRowsProp[];
+    rows?: GridRowsProp;
     columns: GridColDef[];
 }
 
 const Datatable = ({ rows, columns }: Props) => {
     return (
         <Container>
-            <Paper style={{ height: 400, width: '100%' }}>
+            <Paper style={{ height: '100%', width: '100%' }}>
                 <DataGrid
                     rows={rows}
                     columns={columns}

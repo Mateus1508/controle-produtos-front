@@ -3,7 +3,7 @@ import styles from './page.module.css';
 
 export default function Home() {
     return (
-        <div className="container">
+        <div className="container-column">
             <h1 className={styles.title}>Bem-vindo ao Controle de Produtos!</h1>
             <h2>Selecione uma opção para entrar na plataforma</h2>
             <div className={styles.linksBox}>
