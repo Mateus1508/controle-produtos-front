@@ -60,37 +60,3 @@ Aqui está uma visão geral da estrutura do projeto:
 └── tsconfig.json          # Configurações do TypeScript
 
 ```
-
-## Configurações Adicionais
-
-1. **Variáveis de Ambiente**: Configure suas variáveis de ambiente no arquivo `.env.local`. Exemplo de conteúdo:
-
-    ```
-    NEXT_PUBLIC_API_URL=https://api.exemplo.com
-    ```
-
-2. **Imagens de Fundo**: Para definir uma imagem de fundo global, adicione a imagem na pasta `public/` e configure o CSS global.
-
-## Scripts Disponíveis
-
--   `npm run dev` ou `yarn dev`: Inicia o servidor de desenvolvimento.
--   `npm run build` ou `yarn build`: Cria uma versão otimizada para produção.
--   `npm run start` ou `yarn start`: Inicia o servidor em modo de produção.
--   `npm run lint` ou `yarn lint`: Executa o linting do código.
--   `npm run test` ou `yarn test`: Executa os testes.
-
-## Contribuição
-
-Contribuições são bem-vindas! Se você deseja contribuir para o projeto, siga estes passos:
-
-1. Faça um fork do repositório.
-2. Crie uma branch para suas alterações.
-3. Faça um pull request detalhando suas alterações.
-
-## Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
-
----
-
-Sinta-se à vontade para ajustar este README conforme as necessidades específicas do seu projeto.
