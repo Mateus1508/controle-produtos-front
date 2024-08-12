@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Como rodar o projeto
 
-## Getting Started
+1. Clone o repositório:
 
-First, run the development server:
+    ```bash
+    git clone https://github.com/Mateus1508/controle-produtos-front.git
+    ```
+
+2. Instale as dependências:
+
+    ```bash
+    npm install
+    ```
+
+    ou
+
+    ```bash
+    yarn install
+    ```
+
+## Executando o Projeto
+
+Para iniciar o servidor de desenvolvimento, execute:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ou
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+O projeto estará disponível em [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## Estrutura do Projeto
 
-To learn more about Next.js, take a look at the following resources:
+Aqui está uma visão geral da estrutura do projeto:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+.
+├── public/                # Arquivos estáticos e imagens
+│   └── background.jpg     # Exemplo de imagem de fundo
+├── src/                   # Código-fonte da aplicação
+│   ├── api/               # Métodos e chamadas à API
+│   ├── app/               # Configurações de rotas e estrutura da aplicação
+│   ├── components/        # Componentes React reutilizáveis
+│   ├── constants/         # Constantes
+│   ├── hooks/             # Hooks personalizados
+│   ├── interfaces/        # Tipagens TypeScript
+│   ├── providers/         # Contextos e provedores
+│   ├── store/             # Gerenciamento de estado global
+│   └── middleware.ts      # Middleware personalizado para autenticação
+├── .eslintrc.json         # Configurações do ESLint
+├── .prettierrc            # Configurações do Prettier
+├── next.config.mjs        # Configurações do Next.js
+├── package.json           # Dependências e scripts do projeto
+├── package-lock.json      # Registro de versões exatas das dependências
+└── tsconfig.json          # Configurações do TypeScript
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
 
-## Deploy on Vercel
+## Configurações Adicionais
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Variáveis de Ambiente**: Configure suas variáveis de ambiente no arquivo `.env.local`. Exemplo de conteúdo:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    ```
+    NEXT_PUBLIC_API_URL=https://api.exemplo.com
+    ```
+
+2. **Imagens de Fundo**: Para definir uma imagem de fundo global, adicione a imagem na pasta `public/` e configure o CSS global.
+
+## Scripts Disponíveis
+
+-   `npm run dev` ou `yarn dev`: Inicia o servidor de desenvolvimento.
+-   `npm run build` ou `yarn build`: Cria uma versão otimizada para produção.
+-   `npm run start` ou `yarn start`: Inicia o servidor em modo de produção.
+-   `npm run lint` ou `yarn lint`: Executa o linting do código.
+-   `npm run test` ou `yarn test`: Executa os testes.
+
+## Contribuição
+
+Contribuições são bem-vindas! Se você deseja contribuir para o projeto, siga estes passos:
+
+1. Faça um fork do repositório.
+2. Crie uma branch para suas alterações.
+3. Faça um pull request detalhando suas alterações.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
+---
+
+Sinta-se à vontade para ajustar este README conforme as necessidades específicas do seu projeto.
