@@ -13,8 +13,7 @@ export class AuthMethods {
             if (token) {
                 useAuthStore.getState().setToken(token);
             }
-
-            return response;
+            return response.data;
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 return error.response;
@@ -27,7 +26,9 @@ export class AuthMethods {
             const response = await api.post('/auth/register', data);
             return response.data;
         } catch (error) {
-            throw new Error('Erro ao cadastrar usuário. Tente novamente.');
+            if (axios.isAxiosError(error)) {
+                return error.response;
+            }
         }
     };
 }

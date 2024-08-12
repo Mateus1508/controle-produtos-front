@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { protectedRoutes, publicRoutes } from './constants/routePaths';
+import { protectedRoutes } from './constants/routePaths';
 import { cookies } from 'next/headers';
 
 const middleware = async (req: NextRequest): Promise<NextResponse> => {
@@ -11,15 +11,6 @@ const middleware = async (req: NextRequest): Promise<NextResponse> => {
     ) {
         const redirectToLogin = new URL('/auth/login', req.nextUrl.origin);
         return NextResponse.redirect(redirectToLogin.toString());
-    }
-
-    if (
-        token &&
-        publicRoutes.some((path) => req.nextUrl.pathname.startsWith(path)) &&
-        req.nextUrl.pathname !== '/get-all-products'
-    ) {
-        const redirectToMain = new URL('/get-all-products', req.nextUrl.origin);
-        return NextResponse.redirect(redirectToMain.toString());
     }
 
     return NextResponse.next();

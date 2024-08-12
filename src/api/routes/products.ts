@@ -1,6 +1,7 @@
 import { UpdateProductDTO } from '@/interfaces/UpdateProductDto';
 import api from '../apiConfig';
 import { CreateProductDTO } from '@/interfaces/CreateProductDto';
+import axios from 'axios';
 
 export class ProductMethods {
     getAllProducts = async () => {
@@ -14,10 +15,10 @@ export class ProductMethods {
         }
     };
 
-    getProductById = async (id: number) => {
+    getProductById = async (id: string) => {
         try {
             const response = await api.get(`/products/get-one-product/${id}`);
-            return response.data;
+            return response.data.data.product;
         } catch (error) {
             throw new Error(
                 'Erro ao retornar produto. Por favor recarregue a página.'
@@ -30,11 +31,13 @@ export class ProductMethods {
             const response = await api.post(`/products/create-product`, data);
             return response.data;
         } catch (error) {
-            throw new Error('Erro ao atualizar produto. Tente novamente.');
+            if (axios.isAxiosError(error)) {
+                return error.response;
+            }
         }
     };
 
-    updateProduct = async (id: number, data: UpdateProductDTO) => {
+    updateProduct = async (id: string, data: UpdateProductDTO) => {
         try {
             const response = await api.patch(
                 `/products/update-product/${id}`,
@@ -42,11 +45,14 @@ export class ProductMethods {
             );
             return response.data;
         } catch (error) {
-            throw new Error('Erro ao atualizar produto. Tente novamente.');
+            if (axios.isAxiosError(error)) {
+                return error.response;
+            }
         }
     };
 
     deleteProduct = async (id: number) => {
+        console.log(id);
         try {
             const response = await api.delete(`/products/delete-product/${id}`);
             return response.data;

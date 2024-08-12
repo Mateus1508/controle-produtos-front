@@ -1,5 +1,5 @@
 export interface SnackbarProps {
     open: boolean;
-    message: string;
+    message: string | string[];
     severity: 'success' | 'error';
 }

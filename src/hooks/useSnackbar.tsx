@@ -9,10 +9,14 @@ const useSnackbar = () => {
     });
 
     const showSnackbar = useCallback(
-        (message: string, severity: 'success' | 'error') => {
+        (messages: string | string[], severity: 'success' | 'error') => {
+            const formattedMessage = Array.isArray(messages)
+                ? messages.join('\n') // Junta as mensagens com quebras de linha
+                : messages;
+
             setSnackbar({
                 open: true,
-                message,
+                message: formattedMessage,
                 severity,
             });
         },

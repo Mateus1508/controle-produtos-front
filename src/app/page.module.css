@@ -1,6 +1,17 @@
+.content {
+    display: flex;
+    max-width: 600px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
 .linksBox {
     display: flex;
     gap: 10px;
+    align-items: center;
+    width: 100%;
 }
 
 .link:hover {
@@ -8,4 +19,12 @@
     color: #ffffff;
     transition: 0.2s linear;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.highlight {
+    color: #47967f;
+}
+
+.paragraph {
+    text-align: justify;
 }

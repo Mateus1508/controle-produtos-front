@@ -28,7 +28,7 @@ const Navigation = () => {
     return (
         <>
             {!isPublicRoute ? (
-                <AppBar position="static">
+                <AppBar position="static" sx={{ backgroundColor: '#47967f' }}>
                     <Toolbar>
                         <Typography variant="h6" style={{ flexGrow: 1 }}>
                             Controle de produtos

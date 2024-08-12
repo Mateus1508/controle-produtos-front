@@ -11,6 +11,11 @@ const NotificationAlert: React.FC<NotificationAlertProps> = ({
     snackbar,
     onClose,
 }) => {
+    const messages = Array.isArray(snackbar.message)
+        ? snackbar.message
+        : [snackbar.message];
+    const combinedMessage = messages.join('\n');
+
     return (
         <Snackbar
             open={snackbar.open}
@@ -19,7 +24,12 @@ const NotificationAlert: React.FC<NotificationAlertProps> = ({
             anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
         >
             <Alert onClose={onClose} severity={snackbar.severity}>
-                {snackbar.message}
+                {combinedMessage.split('\n').map((msg, index) => (
+                    <React.Fragment key={index}>
+                        {msg}
+                        <br />
+                    </React.Fragment>
+                ))}
             </Alert>
         </Snackbar>
     );

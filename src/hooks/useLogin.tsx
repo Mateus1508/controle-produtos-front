@@ -7,6 +7,7 @@ const useLogin = () => {
     const mutation = useMutation({
         mutationFn: async (data: LoginDTO) => {
             const result = await login(data);
+            console.log(result);
             return result;
         },
     });

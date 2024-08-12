@@ -23,9 +23,13 @@ const Login = () => {
         event.preventDefault();
         mutate(formValues, {
             onSuccess: (user) => {
-                const severity = user?.data.success ? 'success' : 'error';
-                showSnackbar(user?.data.message, severity);
-                router.push('/get-all-products');
+                const severity = user?.success ? 'success' : 'error';
+                const message = user?.success
+                    ? user.message
+                    : user.data.message;
+                const messages = Array.isArray(message) ? message : [message];
+                showSnackbar(messages, severity);
+                if (user.success) router.push('/get-all-products');
             },
             onError: (error) => {
                 showSnackbar(error.message, 'error');
@@ -42,8 +46,8 @@ const Login = () => {
     };
 
     return (
-        <div className="container-row">
-            <form className={styles.form} onSubmit={handleLoginUser}>
+        <div className="container-row bg-image">
+            <form className="form" onSubmit={handleLoginUser}>
                 <h1 className={styles.title}>Realize o login</h1>
                 <InputField
                     text="CPF/CNPJ"
@@ -60,6 +64,7 @@ const Login = () => {
                 />
                 <button
                     type="submit"
+                    style={{ width: '100%' }}
                     className={`btn-primary ${isPending ? 'loading' : ''}`}
                     disabled={isPending}
                 >
@@ -69,7 +74,11 @@ const Login = () => {
                         ' Entrar'
                     )}
                 </button>
-                <Link href="/auth/register" className="btn-secondary">
+                <Link
+                    href="/auth/register"
+                    className="btn-secondary"
+                    style={{ width: '100%' }}
+                >
                     Criar minha conta
                 </Link>
                 <NotificationAlert
