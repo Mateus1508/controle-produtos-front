@@ -2,7 +2,7 @@
 
 import styles from './styles.module.css';
 import Link from 'next/link';
-import InputField from '@/components/Input';
+import InputField from '@/components/InputField';
 import useLogin from '@/hooks/useLogin';
 import { useState } from 'react';
 import { LoginDTO } from '@/interfaces/LoginDto';

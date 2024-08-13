@@ -1,6 +1,6 @@
 'use client';
 
-import InputField from '@/components/Input';
+import InputField from '@/components/InputField';
 import useGetProductById from '@/hooks/useGetProductById';
 import type { Product } from '@/interfaces/Product';
 import { useParams, useRouter } from 'next/navigation';

@@ -4,7 +4,7 @@ import Datatable from '@/components/Table';
 import useGetAllProducts from '@/hooks/useGetAllProducts';
 import styles from './styles.module.css';
 import { useState } from 'react';
-import InputField from '@/components/Input';
+import InputField from '@/components/InputField';
 import { useRouter } from 'next/navigation';
 
 const ShowProducts = () => {

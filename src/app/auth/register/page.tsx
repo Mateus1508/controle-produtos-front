@@ -2,7 +2,7 @@
 
 import styles from './styles.module.css';
 import Link from 'next/link';
-import InputField from '@/components/Input';
+import InputField from '@/components/InputField';
 import useCreateUser from '@/hooks/useCreateUser';
 import { CreateUserDTO } from '@/interfaces/CreateUserDto';
 import useSnackbar from '@/hooks/useSnackbar';
