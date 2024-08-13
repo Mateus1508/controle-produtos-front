@@ -35,4 +35,8 @@
     .filterBox {
         flex-wrap: wrap;
     }
+
+    .fullWidthButton {
+        width: 100%;
+    }
 }

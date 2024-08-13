@@ -31,8 +31,7 @@ const ShowProducts = () => {
                         value={searchQuery}
                     />
                     <button
-                        style={{ width: '300px' }}
-                        className="btn-primary"
+                        className={`${styles.fullWidthButton} btn-primary`}
                         onClick={() => router.push('/product/')}
                     >
                         Adicionar novo produto

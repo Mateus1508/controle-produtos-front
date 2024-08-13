@@ -7,6 +7,12 @@
     gap: 20px;
 }
 
+@media (max-width: 768px) {
+    .content {
+        max-width: 90%;
+    }
+}
+
 .linksBox {
     display: flex;
     gap: 10px;
