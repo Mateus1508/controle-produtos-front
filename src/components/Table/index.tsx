@@ -17,11 +17,9 @@ interface Props {
 }
 
 const Datatable = ({ rows = [] }: Props) => {
-    // Estado para controlar a página atual e o tamanho da página
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
 
-    // Função para mudar a página
     const handleChangePage = (
         event: React.MouseEvent<HTMLButtonElement> | null,
         newPage: number
@@ -29,16 +27,15 @@ const Datatable = ({ rows = [] }: Props) => {
         setPage(newPage);
     };
 
-    // Função para mudar o tamanho da página
     const handleChangeRowsPerPage = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
         setRowsPerPage(parseInt(event.target.value, 10));
-        setPage(0); // Volta para a primeira página ao mudar o tamanho da página
+        setPage(0);
     };
 
-    // Dados a serem exibidos na página atual
-    const paginatedRows = rows.slice(
+    const reversedRows = [...rows].reverse();
+    const paginatedRows = reversedRows.slice(
         page * rowsPerPage,
         page * rowsPerPage + rowsPerPage
     );
